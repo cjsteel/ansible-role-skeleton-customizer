@@ -3,7 +3,7 @@
 - name: Write hostname
   hosts: localhost
   vars:
-    - custom_role_target_dir: ./custom-role-skeleton
+    - custom_role_target_dir: ../custom-role-skeleton
     # meta/main.yml.j2
     - custom_role_author: Christopher Steel
     - custom_role_description: Install and configure #"{{ role_name }}".
@@ -22,25 +22,19 @@
         state: directory
         mode: '0755'
       loop:
-        - custom-role-skeleton
-        - custom-role-skeleton//defaults
+        - "{{ custom_role_target_dir }}"
+        - "{{ custom_role_target_dir }}/defaults"
         - "{{ custom_role_target_dir }}/handlers"
         - "{{ custom_role_target_dir }}/meta"
         - "{{ custom_role_target_dir }}/molecule"
         - "{{ custom_role_target_dir }}/molecule/default"        
         - "{{ custom_role_target_dir }}/templates"
         - "{{ custom_role_target_dir }}/vars"
-#  - name: write hostname using jinja2
-#    ansible.builtin.template:
-#       src: templates/template-test.md.j2
-#       dest: ./testing/template-test.md
+
     - name: Template the files we want templated
-      # Configure the template module to use dynamic values from the loop
       template:
         src: '{{ item }}'
         dest: '{{ custom_role_target_dir }}/{{ item }}'
-      # Define a 'list of hashes' for the loop module to iterate over
-      # Each item has a 'src' and a 'dest'
       loop:
         - defaults/main.yml.j2
         - handlers/main.yml.j2
@@ -53,7 +47,7 @@
         - molecule/default/verify.yml
         - vars/main.yml.j2
         - CODE_OF_CONDUCT.md
-        - CONTRIBUTING.md.j2
+        #- CONTRIBUTING.md.j2
         - INSTALL.md
         - LICENSE
         #- playbook-customize-this-role.yaml
