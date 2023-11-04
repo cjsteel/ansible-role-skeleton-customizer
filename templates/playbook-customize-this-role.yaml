@@ -1,0 +1,12 @@
+#!/usr/bin/env ansible-playbook
+---
+{% raw %}
+# Example playbook.yaml for role {{ role_name }}
+{% endraw %}
+- name: Write hostname
+  hosts: localhost
+  tasks:
+  - name: write hostname using jinja2
+    ansible.builtin.template:
+       src: templates/template-test.md.j2
+       dest: ./testing/template-test.md

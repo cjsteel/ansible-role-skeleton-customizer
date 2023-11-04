@@ -1,0 +1,52 @@
+---
+galaxy_info:
+  author: {{ custom_role_author }}
+{% raw %}  role_name: {{ role_name }}
+{% endraw %}
+  description: {{ custom_role_description }} {{ '{{' }} role_name {{ '}}' }} on your system.
+  license: {{ custom_role_license }}
+  company: {{ custom_role_company }}
+  min_ansible_version: {{ custom_role_min_ansible_version }}
+
+  platforms:
+    - name: Alpine
+      versions:
+        - all
+    - name: Amazon
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: opensuse
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
+  galaxy_tags:
+{% raw %}
+    - {{ role_name | replace('_', '') }}
+{% endraw %}
+    - application
+    - cloud
+    - database
+    - development
+    - infrastructure
+    - linux
+    - monitoring
+    - networking
+    - storage
+    - security
+    - system
+    - tools
+    - windows
+
+dependencies: []
