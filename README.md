@@ -13,8 +13,29 @@ This clunky example uses [robertdebock/ansible-role-skeleton](https://github.com
 ### Create your customized Ansible role skeleton
 
 1. Clone this repository
+
 2. Make changes to the available vars in `playbook.yaml` and/or role template contents found in the  templates directory.
-3. Run the included  `playbook.yaml`
+
+3. Run the included  `playbook.yml`
+
+    
+
+    ```shell
+    cd ansible-role-skeleton-customizer/
+    rm -R ../custom-role-skeleton/
+    # make any customizations...
+    nano templates/vars/main.yml.j2
+    # run the playbook
+    ./playbook.yml
+    # Generate a role using the custom-role-skeleton
+    cd ..
+    ansible-galaxy init --role-skeleton=custom-role-skeleton your_new_role_name_here
+    # test your new role
+    ...
+    ```
+
+    
+
     1. With the default settings this will output your customized Ansible role skeleton to the directory `custom-role-skeleton`
 
 ### Create a new role from your custom Ansible role skeleton
@@ -31,7 +52,7 @@ Make sure to credit Robert for his awesome work or create your own customizable 
 
 You will need to ensure that Jinja2 template variables for the role name as well as Jinja2 reserved characters are escaped. See the flowing documentation for details:
 
-* [https://jinja.palletsprojects.com/en/3.0.x/templates/#escaping
+* https://jinja.palletsprojects.com/en/3.0.x/templates/#escaping
 
 
 

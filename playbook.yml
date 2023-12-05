@@ -28,8 +28,17 @@
         - "{{ custom_role_target_dir }}/meta"
         - "{{ custom_role_target_dir }}/molecule"
         - "{{ custom_role_target_dir }}/molecule/default"        
+        - "{{ custom_role_target_dir }}/tasks"
         - "{{ custom_role_target_dir }}/templates"
         - "{{ custom_role_target_dir }}/vars"
+
+    - name: Copy files we do not want templated but want made templates
+      copy:
+        src: '{{ item }}'
+        dest: '{{ custom_role_target_dir }}/{{ item }}.j2'
+      loop:
+        - vars/main.yml
+
 
     - name: Template the files we want templated
       template:
@@ -45,7 +54,8 @@
         - molecule/default/converge.yml.j2
         - molecule/default/molecule.yml.j2
         - molecule/default/verify.yml
-        - vars/main.yml.j2
+        - tasks/assert.yml.j2
+        - tasks/main.yml.j2
         - CODE_OF_CONDUCT.md
         #- CONTRIBUTING.md.j2
         - INSTALL.md

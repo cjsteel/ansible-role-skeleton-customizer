@@ -1,2 +1,9 @@
 ---
-{% raw %}# handlers file for {{ role_name }}{% endraw %}
+{% raw %}# handlers file for {{ role_name }}
+
+- name: Reboot
+  ansible.builtin.reboot:
+  when:
+    - {{ role_name }}_reboot
+    - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
+{% endraw %}

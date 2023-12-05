@@ -1,0 +1,40 @@
+---
+{% raw %}# tasks asserts.yml for {{ role_name }}
+# boolean assert example
+#
+#- name: assert | Test {{ role_name }}_reboot
+#  ansible.builtin.assert:
+#    that:
+#      - {{ role_name }}_reboot is defined
+#      - {{ role_name }}_reboot is boolean
+#    quiet: yes
+#
+# string assert example
+#
+#- name: assert | Test {{ role_name }}_upgrade_command
+#  ansible.builtin.assert:
+#    that:
+#      - {{ role_name }}_upgrade_command is defined
+#      - {{ role_name }}_upgrade_command is string
+#      - {{ role_name }}_upgrade_command in [ "dist", "full", "yes", "safe" ]
+#    quiet: yes
+#
+# number assert
+#
+#- name: assert | Test {{ role_name }}_cache_valid_time
+#  ansible.builtin.assert:
+#    that:
+#      - {{ role_name }}_cache_valid_time is defined
+#      - {{ role_name }}_cache_valid_time is number
+#      - {{ role_name }}_cache_valid_time >= 0
+#    quiet: yes
+#
+# list of items assert
+#
+#- name: assert | Test {{ role_name }}_excluded_packages
+#  ansible.builtin.assert:
+#    that:
+#      - {{ role_name }}_excluded_packages is defined
+#      - {{ role_name }}_excluded_packages is iterable
+#    quiet: yes
+{% endraw %}
