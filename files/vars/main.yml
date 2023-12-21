@@ -18,3 +18,24 @@ _{{ role_name }}_requirements:
     - cracklib-dict-small
     - util-linux
 {{ role_name }}: "{{ '{{' }}_{{ role_name }}_requirements[ansible_os_family] | default(_{{ role_name }}_requirements['default']) {{ '}}' }}"
+
+vars/main.yml for {{ role_name }} 
+_{{ role_name }}_packages:
+  default:
+    - cryptsetup
+    - cracklib-dicts
+    - util-linux
+  Alpine:
+    - cryptsetup
+    - cracklib
+    - util-linux
+  Debian:
+    - cryptsetup
+    - cracklib-runtime
+    - util-linux
+  Suse:
+    - cryptsetup
+    - cracklib-dict-small
+    - util-linux
+{{ role_name }}: "{{ '{{' }}_{{ role_name }}_packages[ansible_os_family] | default(_{{ role_name }}_packages['default']) {{ '}}' }}"
+

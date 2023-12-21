@@ -1,16 +1,16 @@
-{% raw %}# [{{ role_name }}](#{{ role_name }})
+# [{{ '{{' }} role_name {{ '}}' }}](#{{ '{{' }} role_name {{ '}}' }})
 
-Install and configure {{ role_name }} on your system.
+Install and configure {{ '{{' }} role_name {{ '}}' }} on your system.
 
-{{ role_name }} in defaults main
+{{ '{{' }} role_name {{ '}}' }} in defaults main
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-{{ role_name }}/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-{{ role_name }}/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-{{ role_name }}/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-{{ role_name }})|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/robertdebock/{{ role_name }})|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/robertdebock/{{ role_name }})|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-{{ role_name }}.svg)](https://github.com/robertdebock/ansible-role-{{ role_name }}/releases/)|
+|[![github](https://github.com/robertdebock/ansible-role-{{ '{{' }} role_name {{ '}}' }}/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-{{ '{{' }} role_name {{ '}}' }}/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-{{ '{{' }} role_name {{ '}}' }}/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-{{ '{{' }} role_name {{ '}}' }})|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/robertdebock/{{ '{{' }} role_name {{ '}}' }})|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/robertdebock/{{ '{{' }} role_name {{ '}}' }})|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-{{ '{{' }} role_name {{ '}}' }}.svg)](https://github.com/robertdebock/ansible-role-{{ '{{' }} role_name {{ '}}' }}/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
-This example is taken from [`molecule/default/converge.yml`](https://github.com/robertdebock/ansible-role-{{ role_name }}/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
+This example is taken from [`molecule/default/converge.yml`](https://github.com/robertdebock/ansible-role-{{ '{{' }} role_name {{ '}}' }}/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
 
 ```yaml
 ---
@@ -20,10 +20,10 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   gather_facts: yes
 
   roles:
-    - role: robertdebock.{{ role_name }}
+    - role: robertdebock.{{ '{{' }} role_name {{ '}}' }}
 ```
 
-The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/robertdebock/ansible-role-{{ role_name }}/blob/master/molecule/default/prepare.yml):
+The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/robertdebock/ansible-role-{{ '{{' }} role_name {{ '}}' }}/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
@@ -40,17 +40,17 @@ Also see a [full explanation and example](https://robertdebock.nl/how-to-use-the
 
 ## [Role Variables](#role-variables)
 
-The default values for the variables are set in [`defaults/main.yml`](https://github.com/robertdebock/ansible-role-{{ role_name }}/blob/master/defaults/main.yml):
+The default values for the variables are set in [`defaults/main.yml`](https://github.com/robertdebock/ansible-role-{{ '{{' }} role_name {{ '}}' }}/blob/master/defaults/main.yml):
 
 ```yaml
 ---
-# defaults file for {{ role_name }}
+# defaults file for {{ '{{' }} role_name {{ '}}' }}
 
 ```
 
 ## [Requirements](#requirements)
 
-- pip packages listed in [requirements.txt](https://github.com/robertdebock/ansible-role-{{ role_name }}/blob/master/requirements.txt).
+- pip packages listed in [requirements.txt](https://github.com/robertdebock/ansible-role-{{ '{{' }} role_name {{ '}}' }}/blob/master/requirements.txt).
 
 ## [State of used roles](#state-of-used-roles)
 
@@ -65,7 +65,7 @@ The following roles are used to prepare a system. You can prepare your system in
 This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://robertdebock.nl/) for further information.
 
 Here is an overview of related roles:
-![dependencies](https://raw.githubusercontent.com/robertdebock/ansible-role-{{ role_name }}/png/requirements.png "Dependencies")
+![dependencies](https://raw.githubusercontent.com/robertdebock/ansible-role-{{ '{{' }} role_name {{ '}}' }}/png/requirements.png "Dependencies")
 
 ## [Compatibility](#compatibility)
 
@@ -87,14 +87,14 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-{{ role_name }}/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-{{ '{{' }} role_name {{ '}}' }}/issues)
 
 ## [License](#license)
 
-[Apache-2.0](https://github.com/robertdebock/ansible-role-{{ role_name }}/blob/master/LICENSE).
+[Apache-2.0](https://github.com/robertdebock/ansible-role-{{ '{{' }} role_name {{ '}}' }}/blob/master/LICENSE).
 
 ## [Author Information](#author-information)
 
 [robertdebock](https://robertdebock.nl/)
 
-Please consider [sponsoring me](https://github.com/sponsors/robertdebock).{% endraw %}
+Please consider [sponsoring me](https://github.com/sponsors/robertdebock).
